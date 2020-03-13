@@ -12,22 +12,30 @@ def missing_number(nums, max_num):
     
     """
 
-    # RUNTIME: O(n^2)?: Two for loops
+    # RUNTIME: O(n^2)?: Two for loops + creating a new list
+
     # take in the list of numbers
     # sort them
-    srt_nums = sorted(nums)
+    # srt_nums = sorted(nums) # creates a new list -- increase runtime
 
     # find the max_num and slice only the section we are intereested in
-    for val in srt_nums:
-        if val == max_num:
-            new_lst = srt_nums[:max_num]
+    # for val in srt_nums:
+        # if val == max_num:
+            # new_lst = srt_nums[:max_num]
     # create sequential numbers up to the range
-    for item in range(1, max_num + 1):
+    # for item in range(1, max_num + 1):
         # item to the numbers in the new_lst (with missing number)
         # if the number is not in the missing nums list
         # return that number
-        if item not in new_lst:
-            return item
+        # if item not in new_lst:
+            # return item
+
+    #Solution 3:
+
+    expected = sum(range(max_num + 1))
+
+    return expected - sum(nums)
+
 
 
 
